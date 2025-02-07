@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>anime gold</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* تحميل الخط المخصص */
+        @font-face {
+            font-family: 'Maghfira'; /* اسم الخط الذي تريده */
+            src: url('fonts/maghfira.ttf') format('truetype'); /* المسار إلى ملف الخط */
+        }
+
+        /* تنسيق الخلفية */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-image: url('https://scontent.frba3-2.fna.fbcdn.net/v/t39.30808-6/475168408_596102249848849_388858270720861095_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=2285d6&_nc_eui2=AeHCooFgyAo2MtvisiRhwLSD2WRUf6LZDEvZZFR_otkMS398BFwzcSiVQ8NwqocBmeNkb_MzxX8ARPYEU0F6vXsj&_nc_ohc=zuiP5D_1hUMQ7kNvgFmBFGm&_nc_oc=AdiWSz43ddsRPJS9OLOybWTvhfUGzq8oXgh6x5HzrjnvjVJwmVlp1CBV_-CcY6piesA&_nc_zt=23&_nc_ht=scontent.frba3-2.fna&_nc_gid=AcYLL6LrSOLt_QyjaLH7LDW&oh=00_AYBjkk2QmvWh2p85XgrHIsieSJNmLykx-IFoqhBiDeJbmw&oe=67AC07D1');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        /* مستطيل أسود شفاف فوق الصورة */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6); /* اللون الأسود مع شفافية 60% */
+            z-index: 1;
+        }
+
+        /* النص "أنمي غولد" */
+        .title {
+            position: absolute;
+            top: 40%; /* التحكم في المسافة من الأعلى */
+            left: 55%; /* التحكم في المسافة من اليسار */
+            transform: translate(-50%, -50%); /* لضبط النقطة المرجعية للنص */
+            font-size: 3rem; /* حجم النص */
+            font-weight: bold;
+            z-index: 2;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* إضافة ظل للنص */
+            display: flex; /* لتنسيق الكلمات أفقيًا */
+            gap: 10px; /* مسافة بين الكلمات */
+        }
+
+        /* تنسيق كلمة "أنمي" */
+        .title .anime {
+            color: #fff200; /* لون أسود */
+            font-family: 'Maghfira', Arial, sans-serif; /* الخط المخصص */
+        }
+
+        /* تنسيق كلمة "غولد" باللون الأبيض */
+        .title .gold {
+            color: #ffffff; /* تغيير اللون إلى أبيض */
+            font-family: 'Maghfira', Arial, sans-serif; /* الخط المخصص */
+        }
+
+        /* قائمة التنقل */
+        .navbar {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 3;
+        }
+
+        .navbar div {
+            background-color: #d66e12;
+            padding: 10px 20px;
+            color: rgb(255, 255, 255);
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-family: 'Roboto', sans-serif; /* إضافة خط روبوت للمستطيلات الصغيرة */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        /* تغيير اللون إلى الأحمر المتناسق مع الأصفر عند مرور الفأرة */
+        .navbar div:hover {
+            background-color: #F44336;
+            transform: scale(1.1);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- مستطيل أسود شفاف فوق الصورة -->
+    <div class="overlay"></div>
+
+    <!-- النص "أنمي غولد" -->
+    <div class="title">
+        <span class="gold">غولد</span>
+        <span class="anime">أنمي</span>
+    </div>
+
+    <!-- قائمة التنقل -->
+    <div class="navbar">
+        <div>اتصل بنا</div>
+        <div>الرئيسية</div>
+        <div>معلومات</div>
+        <div>مجموعة</div>
+    </div>
+    
+
+</body>
+</html>
