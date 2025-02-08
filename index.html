@@ -8,8 +8,8 @@
     <style>
         /* تحميل الخط المخصص */
         @font-face {
-            font-family: 'Maghfira'; /* اسم الخط الذي تريده */
-            src: url('fonts/maghfira.ttf') format('truetype'); /* المسار إلى ملف الخط */
+            font-family: 'Maghfira';
+            src: url('fonts/maghfira.ttf') format('truetype');
         }
 
         /* تنسيق الخلفية */
@@ -31,45 +31,79 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.6); /* اللون الأسود مع شفافية 60% */
+            background-color: rgba(0, 0, 0, 0.6);
             z-index: 1;
         }
 
-        /* النص "أنمي غولد" */
-        .title {
+        /* النصوص */
+        .title-container {
             position: absolute;
-            top: 40%; /* التحكم في المسافة من الأعلى */
-            left: 55%; /* التحكم في المسافة من اليسار */
-            transform: translate(-50%, -50%); /* لضبط النقطة المرجعية للنص */
-            font-size: 3rem; /* حجم النص */
-            font-weight: bold;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
             z-index: 2;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* إضافة ظل للنص */
-            display: flex; /* لتنسيق الكلمات أفقيًا */
-            gap: 10px; /* مسافة بين الكلمات */
         }
 
-        /* تنسيق كلمة "أنمي" */
-        .title .anime {
-            color: #fff200; /* لون أسود */
-            font-family: 'Maghfira', Arial, sans-serif; /* الخط المخصص */
-        }
-
-        /* تنسيق كلمة "غولد" باللون الأبيض */
-        .title .gold {
-            color: #ffffff; /* تغيير اللون إلى أبيض */
-            font-family: 'Maghfira', Arial, sans-serif; /* الخط المخصص */
-        }
-
-        /* قائمة التنقل */
-        .navbar {
-            position: absolute;
-            top: 20px;
-            right: 20px;
+        .title {
+            font-size: 3rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            color: #ffffff;
+            font-family: 'Maghfira', Arial, sans-serif;
             display: flex;
-            flex-direction: column;
+            justify-content: center;
             gap: 10px;
-            z-index: 3;
+        }
+
+        .title .anime {
+            color: #fff200;
+        }
+
+        .subtitle {
+            margin-top: 10px;
+            font-size: 1.5rem;
+            color: #ffffff;
+            font-family: 'Maghfira', Arial, sans-serif;
+        }
+
+        .subtitle .highlight {
+            color: #fff200; /* اللون الأصفر */
+            text-decoration: none; /* إزالة الخط */
+            cursor: pointer;
+        }
+
+        .subtitle .highlight:hover {
+            text-decoration: none; /* التأكد من عدم ظهور الخط حتى عند التحويم */
+        }
+
+        /* مستطيل ضبابي خلف القائمة */
+        .navbar-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 2;
+        }
+
+        .navbar-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 70px;
+            background-color: rgba(31, 29, 29, 0.4);
+            backdrop-filter: blur(10px);
+            z-index: 1;
+        }
+
+        .navbar {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            padding: 15px 0;
+            z-index: 2;
         }
 
         .navbar div {
@@ -79,12 +113,11 @@
             border-radius: 5px;
             cursor: pointer;
             font-size: 16px;
-            font-family: 'Roboto', sans-serif; /* إضافة خط روبوت للمستطيلات الصغيرة */
+            font-family: 'Roboto', sans-serif;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             transition: all 0.3s ease;
         }
 
-        /* تغيير اللون إلى الأحمر المتناسق مع الأصفر عند مرور الفأرة */
         .navbar div:hover {
             background-color: #F44336;
             transform: scale(1.1);
@@ -97,20 +130,27 @@
     <!-- مستطيل أسود شفاف فوق الصورة -->
     <div class="overlay"></div>
 
-    <!-- النص "أنمي غولد" -->
-    <div class="title">
-        <span class="gold">غولد</span>
-        <span class="anime">أنمي</span>
+    <!-- مستطيل ضبابي والقائمة -->
+    <div class="navbar-container">
+        <div class="navbar-bg"></div>
+        <div class="navbar">
+            <div>اتصل بنا</div>
+            <div>الرئيسية</div>
+            <div>معلومات</div>
+            <div>مجموعة</div>
+        </div>
     </div>
 
-    <!-- قائمة التنقل -->
-    <div class="navbar">
-        <div>اتصل بنا</div>
-        <div>الرئيسية</div>
-        <div>معلومات</div>
-        <div>مجموعة</div>
+    <!-- النصوص -->
+    <div class="title-container">
+        <div class="title">
+            <span class="gold">غولد</span>
+            <span class="anime">أنمي</span>
+        </div>
+        <div class="subtitle">
+            مرحبًا بكم في موقع <a href="https://example.com" class="highlight">أنمي غولد</a>، الموقع الرسمي للإمبراطورية <a href="https://example.com" class="highlight">أنمي غولد</a>
+        </div>
     </div>
-    
 
 </body>
 </html>
